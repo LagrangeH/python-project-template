@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "lectureally-bot"
+version = "0.1.0"
+description = ""
+authors = ["Maxim Sergeev <maxsergeev39@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+loguru = "^0.7.2"
+python-dotenv = "^1.0.1"
+pyyaml = "^6.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+coverage = "^7.6.0"
+pytest-cov = "^5.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.8"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "--cov=service --cov-report=term-missing --cov-report=html"
+testpaths = ["tests"]
+
+[tool.poetry.scripts]
+start = "python -m service.main"
+test = "pytest"
+coverage = "pytest --cov=service --cov-report=term-missing --cov-report=html"
