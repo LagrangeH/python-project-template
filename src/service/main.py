@@ -1,10 +1,10 @@
-from src.lectureally_bot.utils.logging import setup_logging
+from utils.logging import setup_logging
 
 
-def bot():
+def main():
     logger = setup_logging
     pass
 
 
 if __name__ == '__main__':
-    bot()
+    main()
